@@ -5,13 +5,14 @@
 </div>
 <div>
   <h4>{{ listFilter }}</h4>
+  <h4>{{ showMessage }}</h4>
 </div>
 <table class="table table-striped" *ngIf="products.length">
   <thead>
     <tr>
       <th>
         <button class="btn btn-primary" (click)="toggleImage()">
-          {{showImage ? 'Hide' : 'Show'}} Image
+          {{ showImage ? "Hide" : "Show" }} Image
         </button>
       </th>
       <th scope="col">Product</th>
@@ -22,7 +23,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of filteredProducts">
       <td>
         <img
           *ngIf="showImage"
@@ -34,10 +35,15 @@
         />
       </td>
       <td>{{ product.productName }}</td>
-      <td>{{ product.productCode | lowercase }}</td>
+      <td>{{ product.productCode | lowercase | convertToSpaces: "-" }}</td>
       <td>{{ product.releaseDate }}</td>
-      <td>{{ product.price | currency:'USD':'symbol':'1.2-2'}}</td>
-      <td>{{ product.starRating }}</td>
+      <td>{{ product.price | currency: "USD":"symbol":"1.2-2" }}</td>
+      <td>
+        <pm-star
+          [rating]="product.starRating"
+          (ratingClicked)="onRatingClicked($event)"
+        ></pm-star>
+      </td>
     </tr>
   </tbody>
 </table>

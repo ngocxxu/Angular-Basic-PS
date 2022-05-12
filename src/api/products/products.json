@@ -1,0 +1,22 @@
+[
+  {
+    "productId": 2,
+    "productName": "Garden Cart",
+    "productCode": "GDN-0023",
+    "releaseDate": "March 18, 2021",
+    "description": "15 gallon capacity rolling garden cart",
+    "price": 32.99,
+    "starRating": 4.2,
+    "imageUrl": "../../assets/images/garden-cart.PNG"
+  },
+  {
+    "productId": 3,
+    "productName": "Hammer",
+    "productCode": "GDN-0023",
+    "releaseDate": "March 18, 2021",
+    "description": "15 gallon capacity rolling garden cart",
+    "price": 12.33,
+    "starRating": 3.3,
+    "imageUrl": "../../assets/images/garden-cart.PNG"
+  }
+]
